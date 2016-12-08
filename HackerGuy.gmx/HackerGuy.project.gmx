@@ -5,9 +5,37 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="Enemies">
+      <sprite>sprites\sFirewall</sprite>
+    </sprites>
+    <sprites name="Player">
+      <sprite>sprites\sPlayer</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Player">
+      <scripts name="States">
+        <script>scripts\GridMoveState.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Util">
+      <script>scripts\InitializeRoom.gml</script>
+    </scripts>
+  </scripts>
+  <objects name="objects">
+    <object>objects\DisplayManager</object>
+    <object>objects\Game</object>
+    <objects name="Player">
+      <object>objects\Player</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rDisplayInit</room>
+    <room>rooms\rLevel1</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
