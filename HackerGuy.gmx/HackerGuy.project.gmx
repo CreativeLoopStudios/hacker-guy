@@ -6,9 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="Enemies">
-      <sprite>sprites\sFirewall</sprite>
-    </sprites>
     <sprites name="Player">
       <sprite>sprites\sPlayer</sprite>
     </sprites>
@@ -19,6 +16,7 @@
     <scripts name="Player">
       <scripts name="States">
         <script>scripts\GridMoveState.gml</script>
+        <script>scripts\IdleState.gml</script>
       </scripts>
     </scripts>
     <scripts name="Util">
@@ -36,6 +34,12 @@
     <room>rooms\rDisplayInit</room>
     <room>rooms\rLevel1</room>
   </rooms>
+  <constants number="4">
+    <constant name="CELL_HEIGHT">32</constant>
+    <constant name="CELL_WIDTH">32</constant>
+    <constant name="FLOOR">-5</constant>
+    <constant name="FIREWALL">-6</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
