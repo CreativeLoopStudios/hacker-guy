@@ -33,9 +33,7 @@ targetY = y;
 
 image_speed = 0;
 
-walking = false;
-
-state = GridMoveState;
+state = IdleState;
 </string>
           </argument>
         </arguments>
