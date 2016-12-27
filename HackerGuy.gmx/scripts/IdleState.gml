@@ -20,11 +20,11 @@ if (down)
 if (right)
 {
     state = GridMoveState;
-    targetX += CELL_HEIGHT;
+    targetX += CELL_WIDTH;
 }
 
 if (left)
 {
     state = GridMoveState;
-    targetX -= CELL_HEIGHT;
+    targetX -= CELL_WIDTH;
 }

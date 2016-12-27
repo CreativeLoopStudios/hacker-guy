@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Display Properties
 idealWidth = 0;
-idealHeight = 540;
+idealHeight = 640;
 zoom = 1;
 maxZoom = 1;
 
