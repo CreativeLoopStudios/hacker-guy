@@ -36,31 +36,23 @@ grid = ds_grid_create(width, height);
 ds_grid_set_region(grid, 0, 0, width - 1, height - 1, VOID);
 
 // reading json file
-var level1File = ReadJsonFile("Level1.json");
-var level1Json = json_decode(level1File);
-
-var defaultList = ds_map_find_value(level1Json, "default");
-
-var levelObj = ds_list_find_value(defaultList, 0);
-
-var levelData = levelObj[? "data"];
-
-var levelSize = ds_list_size(levelData);
+var level1Arr = ReadCSVFile("Level1.csv");
 
 var xx = 0;
 var yy = 0;
-    
-for(var i = 0; i &lt; levelSize; i++)
+
+var len = array_height_2d(level1Arr);
+for(var line = 0; line &lt; len; line++)
 {
-    var tileType = ds_list_find_value(levelData, i);
-    grid[# xx, yy] = tileType;
-    
-    xx++;
-    if((i + 1) mod 10 == 0)
+    var length = array_length_2d(level1Arr, line);
+    for(var column = 0; column &lt; length; column++)
     {
-        xx = 0;
-        yy++;
+        var tileType = level1Arr[column, line];
+        grid[# xx, yy] = tileType;
+        xx++;
     }
+    xx = 0;
+    yy++;
 }
 
 // draw the level using the grid
@@ -68,7 +60,8 @@ for (var yy = 0; yy &lt; height; yy++)
 {
     for(var xx = 0; xx &lt; width; xx++)
     {
-        switch(grid[# xx, yy])
+        var tileType = real(grid[# xx, yy]);
+        switch(tileType)
         {
             case FLOOR:
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
@@ -77,7 +70,15 @@ for (var yy = 0; yy &lt; height; yy++)
                 tile_add(bgWall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
             case PLAYER:
-                instance_create((xx * CELL_WIDTH) - (sprite_get_width(sPlayer) / 2), yy * CELL_HEIGHT - (sprite_get_height(sPlayer) / 2), Player);
+                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)) - 16, Player);
+                tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
+                break;
+            case FIREWALL:
+                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)) - 16, Firewall);
+                tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
+                break;
+            case GREEN_PC:
+                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)) - 16, GreenPC);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
         }
@@ -110,10 +111,6 @@ for (var yy = 0; yy &lt; height; yy++)
         }
     }
 }
-
-
-// destroying json level
-ds_map_destroy(level1Json);
 </string>
           </argument>
         </arguments>
