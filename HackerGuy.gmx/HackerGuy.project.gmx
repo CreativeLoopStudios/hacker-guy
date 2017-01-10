@@ -119,12 +119,11 @@
     <room>rooms\rDisplayInit</room>
     <room>rooms\rLevel1</room>
   </rooms>
-  <constants number="8">
+  <constants number="7">
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
-    <constant name="VOID">-1</constant>
     <constant name="FLOOR">-1</constant>
-    <constant name="WALL">57</constant>
+    <constant name="VOID">57</constant>
     <constant name="PLAYER">2</constant>
     <constant name="FIREWALL">1</constant>
     <constant name="GREEN_PC">3</constant>

@@ -48,7 +48,7 @@ for(var line = 0; line &lt; len; line++)
     for(var column = 0; column &lt; length; column++)
     {
         var tileType = level1Arr[column, line];
-        grid[# xx, yy] = tileType;
+        grid[# xx, yy] = real(tileType);
         xx++;
     }
     xx = 0;
@@ -60,7 +60,7 @@ for (var yy = 0; yy &lt; height; yy++)
 {
     for(var xx = 0; xx &lt; width; xx++)
     {
-        var tileType = real(grid[# xx, yy]);
+        var tileType = grid[# xx, yy];
         switch(tileType)
         {
             case FLOOR:
@@ -90,20 +90,25 @@ for (var yy = 0; yy &lt; height; yy++)
 {
     for (var xx = 0; xx &lt; width; xx++)
     {
-        if (grid[# xx, yy] == WALL)
+        if (grid[# xx, yy] == VOID)
         {
             // Get the tile's x and y
             var tx = xx * tw;
             var ty = yy * th;
             
-            var right = grid[# (xx + 1) div 2, yy div 2] != FLOOR;
-            var left = grid[# (xx - 1) div 2, yy div 2] != FLOOR;
-            var top = grid[# xx div 2, (yy - 1) div 2] != FLOOR;
-            var bottom = grid[# xx , yy + 1] == FLOOR;
+            var right = grid[# xx + 1, yy]  == FLOOR;
+            var left = grid[# xx - 1, yy] == FLOOR;
+            var top = grid[# xx, yy - 1] == FLOOR;
+            var bottom = grid[# xx, yy + 1] == FLOOR;
+            
+            var rightUpper = grid[# xx + 1, yy + 1] == FLOOR;
+            var leftUpper = grid[# xx - 1, yy + 1] == FLOOR;
+            var rightDown = grid[# xx + 1, yy - 1] == FLOOR;
+            var leftDown = grid[# xx - 1, yy - 1] == FLOOR;
             
             if(bottom)
             {
-                tile_add(bgChip1, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, (yy + 1) * CELL_HEIGHT, -ty);
+                tile_add(bgChip1, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
             }
         }
     }
