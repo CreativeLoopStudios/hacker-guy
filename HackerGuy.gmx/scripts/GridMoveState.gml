@@ -5,20 +5,20 @@ if targetX > x
     sprite_index = sPlayerRight;
     image_speed = imageSpd;
 }
-if targetX < x 
+if targetX < x
 {
     x -= spd;
     sprite_index = sPlayerLeft;
     image_speed = imageSpd;
 }
 
-if targetY > y 
+if targetY > y
 {
     y += spd;
     sprite_index = sPlayerBottom;
     image_speed = imageSpd;
 }
-if targetY < y 
+if targetY < y
 {
     y -= spd;
     sprite_index = sPlayerTop;
@@ -29,4 +29,5 @@ if (targetX == x && targetY == y)
 {
     state = IdleState;
     image_speed = 0;
+    moving = false;
 }

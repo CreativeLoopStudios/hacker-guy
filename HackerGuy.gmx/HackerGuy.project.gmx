@@ -99,20 +99,20 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\DisplayManager</object>
-    <object>objects\Game</object>
-    <objects name="Player">
-      <object>objects\Player</object>
+    <objects name="Computers">
+      <object>objects\GreenPC</object>
     </objects>
+    <object>objects\DisplayManager</object>
     <objects name="Enemy">
       <object>objects\Firewall</object>
       <object>objects\Virus</object>
     </objects>
+    <object>objects\Game</object>
+    <objects name="Player">
+      <object>objects\Player</object>
+    </objects>
     <objects name="Walls">
       <object>objects\Level</object>
-    </objects>
-    <objects name="Computers">
-      <object>objects\GreenPC</object>
     </objects>
   </objects>
   <rooms name="rooms">
