@@ -64,11 +64,12 @@ for(var i = 1; i &lt;= room_last; i++)
     }
 }
 
-// resizing application_surface
-surface_resize(application_surface, idealWidth, idealHeight);
+window_set_size(idealWidth * zoom, idealHeight * zoom);
+surface_resize(application_surface, idealWidth * zoom, idealHeight * zoom);
+alarm[0] = 1;    
 // resize gui layer
 display_set_gui_size(idealWidth, idealHeight);
-window_set_size(idealWidth, idealHeight);
+
 
 room_goto(room_next(room));
 </string>
