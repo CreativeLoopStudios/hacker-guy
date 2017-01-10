@@ -31,4 +31,3 @@ if (targetX == x && targetY == y)
     state = IdleState;
     image_speed = 0;
 }
-
