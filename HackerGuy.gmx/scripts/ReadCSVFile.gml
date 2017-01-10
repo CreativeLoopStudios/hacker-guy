@@ -6,6 +6,7 @@ var csvFile = file_text_open_read(working_directory + "Levels\" + filename);
 var csvArr;
 
 var lineNumber = 0;
+
 while !file_text_eof(csvFile)
 {
     var line = file_text_readln(csvFile);
