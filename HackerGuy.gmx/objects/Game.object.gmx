@@ -54,6 +54,9 @@ if global.Debug
 {
     if keyboard_check_pressed(ord('R'))
     {
+        if(instance_exists(Level)) {
+            ds_grid_destroy(Level.grid);
+        }
         game_restart();
     }
 }

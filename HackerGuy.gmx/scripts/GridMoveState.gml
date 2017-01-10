@@ -10,4 +10,3 @@ if (targetX == x && targetY == y)
     state = IdleState;
 }
 
-

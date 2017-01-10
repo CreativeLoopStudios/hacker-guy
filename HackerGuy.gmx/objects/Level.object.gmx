@@ -66,9 +66,6 @@ for (var yy = 0; yy &lt; height; yy++)
             case FLOOR:
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
-            case WALL:
-                tile_add(bgWall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
-                break;
             case PLAYER:
                 instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)), Player);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
