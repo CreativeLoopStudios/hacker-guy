@@ -70,15 +70,15 @@ for (var yy = 0; yy &lt; height; yy++)
                 tile_add(bgWall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
             case PLAYER:
-                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)), Player);
+                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayerBottom) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayerBottom) / 2)), Player);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
             case FIREWALL:
-                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)), Firewall);
+                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayerBottom) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayerBottom) / 2)), Firewall);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
             case GREEN_PC:
-                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayer) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayer) / 2)), GreenPC);
+                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayerBottom) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayerBottom) / 2)), GreenPC);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
         }

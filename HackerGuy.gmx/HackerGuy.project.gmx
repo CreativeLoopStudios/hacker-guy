@@ -36,7 +36,11 @@
       </sprites>
     </sprites>
     <sprites name="Player">
-      <sprite>sprites\sPlayer</sprite>
+      <sprite>sprites\sPlayerBottom</sprite>
+      <sprite>sprites\sPlayerLeft</sprite>
+      <sprite>sprites\sPlayerRight</sprite>
+      <sprite>sprites\sPlayerTop</sprite>
+      <sprite>sprites\sPlayerMask</sprite>
     </sprites>
     <sprites name="Floor">
       <sprite>sprites\sFloor</sprite>
