@@ -48,6 +48,8 @@
     <sprites name="Computers">
       <sprites name="PC">
         <sprite>sprites\sGreenPC</sprite>
+        <sprite>sprites\sGreenPCProgressBar</sprite>
+        <sprite>sprites\sGreenPCHacked</sprite>
       </sprites>
     </sprites>
   </sprites>
