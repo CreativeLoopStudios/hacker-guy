@@ -67,6 +67,7 @@ for (var yy = 0; yy &lt; height; yy++)
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
             case PLAYER:
+                grid[# xx, yy] = FLOOR;
                 instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayerBottom) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayerBottom) / 2)), Player);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
@@ -101,14 +102,74 @@ for (var yy = 0; yy &lt; height; yy++)
             var top = grid[# xx, yy - 1] == FLOOR;
             var bottom = grid[# xx, yy + 1] == FLOOR;
             
-            var rightUpper = grid[# xx + 1, yy + 1] == FLOOR;
-            var leftUpper = grid[# xx - 1, yy + 1] == FLOOR;
-            var rightDown = grid[# xx + 1, yy - 1] == FLOOR;
-            var leftDown = grid[# xx - 1, yy - 1] == FLOOR;
+            var rightUpper = grid[# xx + 1, yy - 1] == FLOOR;
+            var leftUpper = grid[# xx - 1, yy - 1] == FLOOR;
+            var rightDown = grid[# xx + 1, yy + 1] == FLOOR;
+            var leftDown = grid[# xx - 1, yy + 1] == FLOOR;
+            
+            var bottomChip = grid[# xx, yy + 2] == FLOOR;
             
             if(bottom)
             {
                 tile_add(bgChip1, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+            } else if(bottomChip) {
+                if(left) {
+                    if(right) {
+                        if(top) {
+                            tile_add(bgWallAll, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                        } else {
+                            tile_add(bgWallLeftRightBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                        }
+                    } else if(top) {
+                        tile_add(bgWallLeftTopBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    } else {
+                        tile_add(bgWallLeftBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    }
+                } else if (right){
+                    if(top) {
+                        tile_add(bgWallRightTopBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    } else {
+                        tile_add(bgWallRightBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    }
+                } else if (top) {
+                    tile_add(bgWallTopBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);                
+                } else {
+                    tile_add(bgWallBottom, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);   
+                }
+            } else {
+                if(left) {
+                    if(right) {
+                        if(top) {
+                            tile_add(bgWallLeftRightTop, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                        } else {
+                            tile_add(bgWallLeftRight, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                        }
+                    } else if(top) {
+                        tile_add(bgWallLeftTop, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    } else {
+                        tile_add(bgWallLeft, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    }
+                } else if (right){
+                    if(top) {
+                        tile_add(bgWallRightTop, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    } else {
+                        tile_add(bgWallRight, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    }
+                } else if (top) {
+                    tile_add(bgWallTop, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);                
+                } else {
+                    if(leftDown) {
+                        if (rightDown) {
+                            tile_add(bgWallLeftRight, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                        } else {
+                            tile_add(bgWallLeft, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                        }
+                    } else if (rightDown) {
+                        tile_add(bgWallRight, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    } else {
+                        tile_add(bgWall, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -ty);
+                    }
+                }
             }
         }
     }

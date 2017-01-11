@@ -26,6 +26,8 @@ if targetY < y
 }
 
 
+depth = -y;
+
 if (targetX == x && targetY == y)
 {
     state = IdleState;
