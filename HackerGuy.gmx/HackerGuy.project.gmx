@@ -73,15 +73,22 @@
         <background>background\bgChip14</background>
       </backgrounds>
       <background>background\bgFloor</background>
-      <background>background\bgWallDown</background>
-      <background>background\bgWallLeft</background>
-      <background>background\bgWallRight</background>
-      <background>background\bgWallUp</background>
-      <background>background\bgWallLeftBottom</background>
-      <background>background\bgWallRightBottom</background>
-      <background>background\bgWallRightUp</background>
-      <background>background\bgWallLeftUp</background>
       <background>background\bgWall</background>
+      <background>background\bgWallAll</background>
+      <background>background\bgWallLeftRightBottom</background>
+      <background>background\bgWallLeftTopBottom</background>
+      <background>background\bgWallLeftBottom</background>
+      <background>background\bgWallRightTopBottom</background>
+      <background>background\bgWallRightBottom</background>
+      <background>background\bgWallTopBottom</background>
+      <background>background\bgWallBottom</background>
+      <background>background\bgWallLeftRightTop</background>
+      <background>background\bgWallLeftRight</background>
+      <background>background\bgWallLeftTop</background>
+      <background>background\bgWallLeft</background>
+      <background>background\bgWallRightTop</background>
+      <background>background\bgWallRight</background>
+      <background>background\bgWallTop</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>

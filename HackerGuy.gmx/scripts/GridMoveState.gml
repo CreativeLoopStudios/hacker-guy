@@ -22,8 +22,12 @@ if (targetY > y)
     image_speed = imageSpd;
     direction = 270;
 }
+<<<<<<< HEAD
 
 if (targetY < y)
+=======
+if targetY < y
+>>>>>>> 273b1f5ec886afd26ed9665aa58069236126a43f
 {
     y -= spd;
     sprite_index = sPlayerTop;
@@ -31,7 +35,13 @@ if (targetY < y)
     direction = 90;
 }
 
+<<<<<<< HEAD
 if (targetX == x and targetY == y)
+=======
+depth = -y;
+
+if (targetX == x && targetY == y)
+>>>>>>> 273b1f5ec886afd26ed9665aa58069236126a43f
 {
     state = IdleState;
     image_speed = 0;
