@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initialize variables
 spd = 240 / room_speed;
-imageSpd = .2;
+imageSpd = .1;
 
 targetX = x;
 targetY = y;
