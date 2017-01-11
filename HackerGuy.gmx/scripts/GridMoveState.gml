@@ -25,7 +25,6 @@ if targetY < y
     image_speed = imageSpd;
 }
 
-
 depth = -y;
 
 if (targetX == x && targetY == y)

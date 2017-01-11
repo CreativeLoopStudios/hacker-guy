@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>/// set variables
 image_speed = .1
+
+depth = -y;
 </string>
           </argument>
         </arguments>
