@@ -27,13 +27,13 @@
             <kind>1</kind>
             <string>/// Initialize variables
 spd = 240 / room_speed;
-imageSpd = .2;
+imageSpd = .1;
 
 targetX = x;
 targetY = y;
 
 image_speed = 0;
-currentKey = noone;
+keyDS = ds_priority_create();
 
 state = IdleState;
 </string>
