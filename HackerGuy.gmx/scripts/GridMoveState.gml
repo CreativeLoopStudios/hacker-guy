@@ -1,32 +1,33 @@
 /// GridMoveState
-if targetX > x
+if (targetX > x)
 {
     x += spd;
     sprite_index = sPlayerRight;
     image_speed = imageSpd;
 }
-if targetX < x
+
+if (targetX < x)
 {
     x -= spd;
     sprite_index = sPlayerLeft;
     image_speed = imageSpd;
 }
 
-if targetY > y
+if (targetY > y)
 {
     y += spd;
     sprite_index = sPlayerBottom;
     image_speed = imageSpd;
 }
 
-if targetY < y
+if (targetY < y)
 {
     y -= spd;
     sprite_index = sPlayerTop;
     image_speed = imageSpd;
 }
 
-if (targetX == x && targetY == y)
+if (targetX == x and targetY == y)
 {
     state = IdleState;
     image_speed = 0;
