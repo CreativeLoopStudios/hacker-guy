@@ -89,6 +89,7 @@
     <scripts name="Player">
       <scripts name="States">
         <script>scripts\GridMoveState.gml</script>
+        <script>scripts\HackingState.gml</script>
         <script>scripts\IdleState.gml</script>
       </scripts>
     </scripts>
