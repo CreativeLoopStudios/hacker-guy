@@ -33,7 +33,7 @@ targetX = x;
 targetY = y;
 
 image_speed = 0;
-currentKey = noone;
+keyDS = ds_priority_create();
 
 state = IdleState;
 </string>

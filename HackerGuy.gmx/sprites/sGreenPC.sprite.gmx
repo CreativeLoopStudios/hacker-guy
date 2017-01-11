@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>16</xorig>
-  <yorigin>32</yorigin>
+  <yorigin>28</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
   <bbox_right>31</bbox_right>
-  <bbox_top>4</bbox_top>
-  <bbox_bottom>63</bbox_bottom>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>42</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,36 +18,8 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>
-  <height>64</height>
+  <height>43</height>
   <frames>
     <frame index="0">images\sGreenPC_0.png</frame>
-    <frame index="1">images\sGreenPC_1.png</frame>
-    <frame index="2">images\sGreenPC_2.png</frame>
-    <frame index="3">images\sGreenPC_3.png</frame>
-    <frame index="4">images\sGreenPC_4.png</frame>
-    <frame index="5">images\sGreenPC_5.png</frame>
-    <frame index="6">images\sGreenPC_6.png</frame>
-    <frame index="7">images\sGreenPC_7.png</frame>
-    <frame index="8">images\sGreenPC_8.png</frame>
-    <frame index="9">images\sGreenPC_9.png</frame>
-    <frame index="10">images\sGreenPC_10.png</frame>
-    <frame index="11">images\sGreenPC_11.png</frame>
-    <frame index="12">images\sGreenPC_12.png</frame>
-    <frame index="13">images\sGreenPC_13.png</frame>
-    <frame index="14">images\sGreenPC_14.png</frame>
-    <frame index="15">images\sGreenPC_15.png</frame>
-    <frame index="16">images\sGreenPC_16.png</frame>
-    <frame index="17">images\sGreenPC_17.png</frame>
-    <frame index="18">images\sGreenPC_18.png</frame>
-    <frame index="19">images\sGreenPC_19.png</frame>
-    <frame index="20">images\sGreenPC_20.png</frame>
-    <frame index="21">images\sGreenPC_21.png</frame>
-    <frame index="22">images\sGreenPC_22.png</frame>
-    <frame index="23">images\sGreenPC_23.png</frame>
-    <frame index="24">images\sGreenPC_24.png</frame>
-    <frame index="25">images\sGreenPC_25.png</frame>
-    <frame index="26">images\sGreenPC_26.png</frame>
-    <frame index="27">images\sGreenPC_27.png</frame>
-    <frame index="28">images\sGreenPC_28.png</frame>
   </frames>
 </sprite>

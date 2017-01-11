@@ -1,8 +1,10 @@
 /// IdleState
-var up = keyboard_check_pressed(vk_up);
-var down = keyboard_check_pressed(vk_down);
-var right = keyboard_check_pressed(vk_right);
-var left = keyboard_check_pressed(vk_left);
+
+
+var up = keyboard_check(vk_up);
+var down = keyboard_check(vk_down);
+var right = keyboard_check(vk_right);
+var left = keyboard_check(vk_left);
 
 if (up and GridPlaceMeeting(0, -1))
 {

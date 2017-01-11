@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="4" name="datafiles">
-    <datafiles number="4" name="Levels">
+  <datafiles number="7" name="datafiles">
+    <datafiles number="7" name="Levels">
       <datafile>
         <name>Level1.csv</name>
         <exists>-1</exists>
@@ -124,9 +124,9 @@
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-1</constant>
     <constant name="VOID">57</constant>
-    <constant name="PLAYER">2</constant>
+    <constant name="PLAYER">4</constant>
     <constant name="FIREWALL">1</constant>
-    <constant name="GREEN_PC">3</constant>
+    <constant name="GREEN_PC">5</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
