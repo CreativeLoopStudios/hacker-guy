@@ -95,9 +95,9 @@
   <scripts name="scripts">
     <scripts name="Player">
       <scripts name="States">
-        <script>scripts\GridMoveState.gml</script>
-        <script>scripts\HackingState.gml</script>
-        <script>scripts\IdleState.gml</script>
+        <script>scripts\PlayerGridMoveState.gml</script>
+        <script>scripts\PlayerHackingState.gml</script>
+        <script>scripts\PlayerIdleState.gml</script>
       </scripts>
     </scripts>
     <scripts name="Util">
@@ -106,6 +106,14 @@
     </scripts>
     <scripts name="Collision">
       <script>scripts\GridPlaceMeeting.gml</script>
+    </scripts>
+    <scripts name="Computers">
+      <scripts name="States">
+        <script>scripts\ComputerProgressState.gml</script>
+        <script>scripts\ComputerHackedState.gml</script>
+        <script>scripts\ComputerIdleState.gml</script>
+      </scripts>
+      <script>scripts\HackComputer.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
