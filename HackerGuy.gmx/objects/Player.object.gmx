@@ -33,9 +33,8 @@ targetX = x;
 targetY = y;
 
 image_speed = 0;
-keyDS = ds_priority_create();
 
-state = IdleState;
+state = PlayerIdleState;
 </string>
           </argument>
         </arguments>
@@ -89,7 +88,6 @@ view_yview = clamp(view_yview, 0, room_height - view_hview);
             <kind>1</kind>
             <string>/// execute state
 script_execute(state);
-
 </string>
           </argument>
         </arguments>
