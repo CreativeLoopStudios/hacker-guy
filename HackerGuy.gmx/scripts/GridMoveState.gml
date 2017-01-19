@@ -18,13 +18,14 @@ if targetY > y
     sprite_index = sPlayerBottom;
     image_speed = imageSpd;
 }
-
 if targetY < y
 {
     y -= spd;
     sprite_index = sPlayerTop;
     image_speed = imageSpd;
 }
+
+depth = -y;
 
 if (targetX == x && targetY == y)
 {
