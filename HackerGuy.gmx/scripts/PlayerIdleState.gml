@@ -69,11 +69,8 @@ var space_pressed = keyboard_check_pressed(vk_space);
 
 // if computer is at top
 var computer = instance_place(x, y - CELL_HEIGHT, GreenPC);
-if(instance_exists(computer) and direction == 90 and space_pressed)
+if(space_pressed and instance_exists(computer) and direction == 90 and not(computer.hacked))
 {
-    if(not(computer.hacked))
-    {
-        state = PlayerHackingState;
-        HackComputer(computer);
-    }
+    currentComputerBeingHacked = computer;
+    state = PlayerHackingState;
 }

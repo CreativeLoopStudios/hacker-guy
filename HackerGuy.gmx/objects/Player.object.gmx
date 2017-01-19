@@ -35,6 +35,8 @@ targetY = y;
 image_speed = 0;
 
 state = PlayerIdleState;
+
+currentComputerBeingHacked = noone;
 </string>
           </argument>
         </arguments>
