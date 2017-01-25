@@ -36,18 +36,18 @@ grid = ds_grid_create(width, height);
 ds_grid_set_region(grid, 0, 0, width - 1, height - 1, VOID);
 
 // reading json file
-var level1Arr = ReadCSVFile("Level1.csv");
+var levelArr = ReadCSVFile(levelName);
 
 var xx = 0;
 var yy = 0;
 
-var len = array_height_2d(level1Arr);
+var len = array_height_2d(levelArr);
 for(var line = 0; line &lt; len; line++)
 {
-    var length = array_length_2d(level1Arr, line);
+    var length = array_length_2d(levelArr, line);
     for(var column = 0; column &lt; length; column++)
     {
-        var tileType = level1Arr[column, line];
+        var tileType = levelArr[column, line];
         grid[# xx, yy] = real(tileType);
         xx++;
     }
@@ -64,21 +64,6 @@ for (var yy = 0; yy &lt; height; yy++)
         switch(tileType)
         {
             case FLOOR:
-                tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
-                break;
-            case PLAYER:
-                grid[# xx, yy] = FLOOR;
-                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sPlayerBottom) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sPlayerBottom) / 2)), Player);
-                tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, -yy * CELL_HEIGHT / 2);
-                break;
-            case FIREWALL:
-                grid[# xx, yy] = FLOOR;
-                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sFirewall) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sFirewall) / 2)), Firewall);
-                tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
-                break;
-            case GREEN_PC:
-                //grid[# xx, yy] = FLOOR;
-                instance_create((xx * CELL_WIDTH) + (sprite_get_width(sGreenPC) / 2), ((yy * CELL_HEIGHT) + (sprite_get_height(sGreenPC) / 2)), GreenPC);
                 tile_add(bgFloor, 0, 0, CELL_WIDTH, CELL_HEIGHT, xx * CELL_WIDTH, yy * CELL_HEIGHT, 0);
                 break;
         }
