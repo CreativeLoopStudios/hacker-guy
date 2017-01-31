@@ -104,6 +104,7 @@
       <script>scripts\InitializeRoom.gml</script>
       <script>scripts\ReadCSVFile.gml</script>
       <script>scripts\CreateOnGrid.gml</script>
+      <script>scripts\GridMove.gml</script>
     </scripts>
     <scripts name="Collision">
       <script>scripts\GridPlaceMeeting.gml</script>
@@ -119,7 +120,8 @@
     </scripts>
     <scripts name="Firewall">
       <scripts name="States">
-        <script>scripts\FirewallIdleState.gml</script>
+        <script>scripts\FirewallPatrollingState.gml</script>
+        <script>scripts\FirewallFollowingPlayerState.gml</script>
         <script>scripts\FirewallDisabledState.gml</script>
       </scripts>
       <script>scripts\DisableFirewall.gml</script>
@@ -150,7 +152,9 @@
     <room>rooms\rDisplayInit</room>
     <room>rooms\rLevel1</room>
   </rooms>
-  <constants number="7">
+  <constants number="9">
+    <constant name="PLAYER_SPEED_DEBUG">240</constant>
+    <constant name="PLAYER_SPEED">120</constant>
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-1</constant>

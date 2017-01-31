@@ -26,7 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize variables
-spd = 240 / room_speed;
+var spdValue = PLAYER_SPEED;
+if(global.debug)
+{
+    spdValue = PLAYER_SPEED_DEBUG;
+}
+
+spd = spdValue / room_speed;
+
 imageSpd = .1;
 
 targetX = x;
