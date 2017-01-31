@@ -30,7 +30,20 @@ image_speed = .1;
 
 depth = -y;
 
-state = FirewallIdleState;
+patrolling = false;
+
+maxDistanceFromPlayer = 4;
+
+lastTargetX = x;
+lastTargetY = y;
+
+targetX = x;
+targetY = y;
+
+defaultSpd = 60 / room_speed;
+spd = 60 / room_speed;
+
+state = FirewallPatrollingState;
 </string>
           </argument>
         </arguments>
@@ -55,6 +68,30 @@ state = FirewallIdleState;
             <kind>1</kind>
             <string>/// state
 script_execute(state);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Move firewall
+GridMove();
+
+
 </string>
           </argument>
         </arguments>

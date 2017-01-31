@@ -35,7 +35,9 @@ CreateOnGrid(grid, 1, 20, sprite_get_width(sPlayerBottom) / 2, Player, PLAYER);
 
 // pc
 var pc1 = CreateOnGrid(grid, 8, 7, sprite_get_width(sGreenPC) / 2, GreenPC, GREEN_PC);
-pc1.connectedFirewall = CreateOnGrid(grid, 14, 20, sprite_get_width(sFirewall) / 2, Firewall, FIREWALL);
+var firewall1 = CreateOnGrid(grid, 14, 20, sprite_get_width(sFirewall) / 2, Firewall, FIREWALL);
+firewall1.direction = 90;
+pc1.connectedFirewall = firewall1;
 </string>
           </argument>
         </arguments>
