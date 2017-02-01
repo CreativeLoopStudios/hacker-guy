@@ -26,16 +26,24 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize variables
-spd = 240 / room_speed;
+var spdValue = PLAYER_SPEED;
+if(global.debug)
+{
+    spdValue = PLAYER_SPEED_DEBUG;
+}
+
+spd = spdValue / room_speed;
+
 imageSpd = .1;
 
 targetX = x;
 targetY = y;
 
 image_speed = 0;
-keyDS = ds_priority_create();
 
-state = IdleState;
+state = PlayerIdleState;
+
+currentComputerBeingHacked = noone;
 </string>
           </argument>
         </arguments>
@@ -89,7 +97,6 @@ view_yview = clamp(view_yview, 0, room_height - view_hview);
             <kind>1</kind>
             <string>/// execute state
 script_execute(state);
-
 </string>
           </argument>
         </arguments>

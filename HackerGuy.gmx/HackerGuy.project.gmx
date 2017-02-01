@@ -3,12 +3,12 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="7" name="datafiles">
-    <datafiles number="7" name="Levels">
+  <datafiles number="8" name="datafiles">
+    <datafiles number="8" name="Levels">
       <datafile>
-        <name>Level1.csv</name>
+        <name>Level1_Walls.csv</name>
         <exists>-1</exists>
-        <size>1896</size>
+        <size>1900</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -20,7 +20,7 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>Level1.csv</filename>
+        <filename>Level1_Walls.csv</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -48,6 +48,8 @@
     <sprites name="Computers">
       <sprites name="PC">
         <sprite>sprites\sGreenPC</sprite>
+        <sprite>sprites\sGreenPCProgressBar</sprite>
+        <sprite>sprites\sGreenPCHacked</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -93,18 +95,41 @@
   <scripts name="scripts">
     <scripts name="Player">
       <scripts name="States">
-        <script>scripts\GridMoveState.gml</script>
-        <script>scripts\IdleState.gml</script>
+        <script>scripts\PlayerGridMoveState.gml</script>
+        <script>scripts\PlayerHackingState.gml</script>
+        <script>scripts\PlayerIdleState.gml</script>
       </scripts>
     </scripts>
     <scripts name="Util">
       <script>scripts\InitializeRoom.gml</script>
       <script>scripts\ReadCSVFile.gml</script>
+      <script>scripts\CreateOnGrid.gml</script>
+      <script>scripts\GridMove.gml</script>
     </scripts>
     <scripts name="Collision">
       <script>scripts\GridPlaceMeeting.gml</script>
     </scripts>
+    <scripts name="Computers">
+      <scripts name="States">
+        <script>scripts\ComputerHackedState.gml</script>
+        <script>scripts\ComputerIdleState.gml</script>
+        <script>scripts\ComputerProgressState.gml</script>
+      </scripts>
+      <script>scripts\HackComputer.gml</script>
+      <script>scripts\UnhackComputer.gml</script>
+    </scripts>
+    <scripts name="Firewall">
+      <scripts name="States">
+        <script>scripts\FirewallPatrollingState.gml</script>
+        <script>scripts\FirewallFollowingPlayerState.gml</script>
+        <script>scripts\FirewallDisabledState.gml</script>
+      </scripts>
+      <script>scripts\DisableFirewall.gml</script>
+    </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shGreyscale.shader</shader>
+  </shaders>
   <objects name="objects">
     <objects name="Computers">
       <object>objects\GreenPC</object>
@@ -120,13 +145,16 @@
     </objects>
     <objects name="Walls">
       <object>objects\Level</object>
+      <object>objects\Level1</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rDisplayInit</room>
     <room>rooms\rLevel1</room>
   </rooms>
-  <constants number="7">
+  <constants number="9">
+    <constant name="PLAYER_SPEED_DEBUG">240</constant>
+    <constant name="PLAYER_SPEED">120</constant>
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-1</constant>
